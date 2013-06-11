@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>JSDoc: <?js= title ?></title>
-    
+
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
     <!--[if lt IE 9]>
@@ -23,9 +23,9 @@
 <body>
 
 <div id="main">
-    
+
     <h1 class="page-title"><?js= title ?></h1>
-    
+
     <?js= content ?>
 </div>
 
@@ -40,48 +40,11 @@
     <a href="#" class="language-toggle"></a>
 </footer>
 
-<script> prettyPrint(); </script>
 <script src="scripts/linenumber.js"> </script>
 <script src="scripts/jquery.js"> </script>
 <script src="scripts/jquery.cookie.js"> </script>
-<script>
 
-    (function ($) {
+<script src="scripts/run_script.js"> </script>
 
-        $(document).ready(function () {
-
-            function updateLanguage (english) {
-
-                if (english) {
-
-                    $('.en').show();
-                    $('.ja').hide();
-                    $('.language-toggle').text('言語を日本語へ変更する');
-
-                } else {
-
-                    $('.en').hide();
-                    $('.ja').show();
-                    $('.language-toggle').text('Change Language to English');
-                }
-            }
-
-            var english = ($.cookie('language') === 'english');
-            updateLanguage(english);
-
-            $('.language-toggle').on('click', function (event) {
-
-                event.preventDefault();
-
-                english = !english;
-
-                $.cookie('language', english ? 'english' : 'japanese');
-                updateLanguage(english);
-            });
-        });
-
-    }(jQuery));
-
-</script>
 </body>
 </html>
